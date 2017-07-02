@@ -2,7 +2,7 @@
 
 ## Project Workout
 
-Dismayed with many of the workout customizeable workout applications available we decided to build our own.  
+Dismayed with many of the customizeable workout applications available we decided to build our own.  
 
 ## Tech Details
 1. Rails 5
