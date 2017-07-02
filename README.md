@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Project Workout
 
-Things you may want to cover:
+Dismayed with many of the workout customizeable workout applications available we decided to build our own.  
 
-* Ruby version
+## Tech Details
+1. Rails 5
+2. INSPINA Theme integration
+3. Devise for Authentication
+4. Database: Postgres
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
