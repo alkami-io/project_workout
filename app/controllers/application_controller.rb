@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   #
   ## Take User to their dashboard after successful login
   def after_sign_in_path_for(resource_or_scope)
-    dashboard_one_path
+    user_path(current_user)
   end
 
   #
