@@ -1,4 +1,10 @@
 class PagesController < ApplicationController
+  #
+  ## Home Page
+  def home
+
+  end
+
   def search_results
   end
 

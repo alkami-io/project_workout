@@ -110,10 +110,8 @@
 
 
             <li>
-                <a href="<%#= url_for :controller => 'pages', :action => 'login_2' %>">
-                <i class="fa fa-sign-out"></i> Log out
-            </a>
-        </li>
+              <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+            </li>
 
             <li>
                 <a class="right-sidebar-toggle">
