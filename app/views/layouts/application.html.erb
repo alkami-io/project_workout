@@ -7,7 +7,7 @@
     <title>AlkamiFit</title>
 
     <!-- Include style per-controller - vendor plugins -->
-    <%= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.scss") %>
+    <%#= stylesheet_link_tag params[:controller] if ::Rails.application.assets.find_asset("#{params[:controller]}.scss") %>
 
     <!-- Main css styles -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
