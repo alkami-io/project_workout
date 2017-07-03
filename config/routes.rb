@@ -7,6 +7,10 @@ Rails.application.routes.draw do
   ## Application Routes
   root to: 'pages#home'
 
+  #
+  ## User Routes
+  resources :users, only: [:index, :show, :edit, :update]
+
 
   #
   ## Template routes
