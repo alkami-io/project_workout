@@ -2,10 +2,14 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # You can have the root of your site routed with "root"
+
+  #
+  ## Application Routes
   root to: 'pages#home'
 
-  # All routes
+
+  #
+  ## Template routes
   get "dashboards/dashboard_1", as: :dashboard_one
   get "dashboards/dashboard_2"
   get "dashboards/dashboard_3"
