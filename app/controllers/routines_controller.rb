@@ -13,6 +13,8 @@ class RoutinesController < ApplicationController
 
   def create
     @routine = Routine.create(routine_params)
+    @routine.user_id = current_user.id
+    @routine.save
 
     if @routine.save
       redirect_to user_path(current_user), notice: 'Routine Saved'

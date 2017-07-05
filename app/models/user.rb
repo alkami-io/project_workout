@@ -4,4 +4,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :lockable, :timeoutable, :confirmable
+
+  #
+  ## Relationships and Associations
+  has_many :routines
 end
