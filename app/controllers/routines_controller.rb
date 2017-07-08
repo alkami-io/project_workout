@@ -32,7 +32,7 @@ class RoutinesController < ApplicationController
 
   end
 
-  def delete
+  def destroy
 
   end
 

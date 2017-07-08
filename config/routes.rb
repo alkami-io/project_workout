@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   ## Routine Routes
   resources :routines
 
+  #
+  ## Exercise Routes
+  resources :exercises
 
   #
   ## Template routes
