@@ -4,7 +4,7 @@ class RoutinesController < ApplicationController
   end
 
   def show
-
+    @routine = Routine.find_by_id(params[:id])
   end
 
   def new

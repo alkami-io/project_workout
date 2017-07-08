@@ -30,69 +30,27 @@
         <div class="">
           <div>
             <h2 class="no-margins">
-              Alex Smith
+              <%= current_user.first_name %> <%= current_user.last_name %>
             </h2>
-            <h4>Founder of Groupeq</h4>
+            <h4></h4>
             <small>
-              There are many variations of passages of Lorem Ipsum available, but the majority
-              have suffered alteration in some form Ipsum available.
+              When you want to succeed as bad as you want to breathe, then you’ll be successful.
             </small>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-md-3">
-      <table class="table small m-b-xs">
-        <tbody>
-        <tr>
-          <td>
-            <strong>142</strong> Projects
-          </td>
-          <td>
-            <strong>22</strong> Followers
-          </td>
-
-        </tr>
-        <tr>
-          <td>
-            <strong>61</strong> Comments
-          </td>
-          <td>
-            <strong>54</strong> Articles
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <strong>154</strong> Tags
-          </td>
-          <td>
-            <strong>32</strong> Friends
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="col-md-6">
+      <%= link_to 'Create Routine', new_routine_path, class: 'btn btn-block btn-outline btn-primary' %>
+      <button type="button" class="btn btn-block btn-outline btn-success">Add Exercise</button>
     </div>
-    <div class="col-md-3">
-      <small>Sales in last 24h</small>
-      <h2 class="no-margins">206 480</h2>
-      <div id="sparkline1"></div>
-    </div>
-
+    <div class="col-md-6"></div>
 
   </div>
-
-  <hr>
-
-  <div>
-    <%= link_to 'Create Routine', new_routine_path, class: 'btn btn-block btn-outline btn-primary' %>
-    <button type="button" class="btn btn-block btn-outline btn-success">Add Exercise</button>
-  </div>
-
-  <hr>
 
   <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-     <% @routines.each do |routine| %>
+     <% @user.routines.each do |routine| %>
       <div class="col-md-3">
         <div class="ibox">
           <div class="ibox-content product-box">
@@ -101,15 +59,11 @@
               <%= routine.name %>
             </div>
             <div class="product-desc">
-              <span class="product-price">
-
-              </span>
               <small class="text-muted"></small>
               <a href="#" class="product-name"> <%= routine.name %></a>
 
               <div class="m-t text-right">
-
-                <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                <%= link_to "View Routine <i class='fa fa-long-arrow-right'></i>".html_safe, routine_path(routine), class: 'btn btn-xs btn-outline btn-primary' %>
               </div>
             </div>
           </div>
