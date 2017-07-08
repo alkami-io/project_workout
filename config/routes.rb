@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   ## User Routes
   resources :users, only: [:index, :show, :edit, :update]
 
+  #
+  ## Routine Routes
+  resources :routines
+
 
   #
   ## Template routes
