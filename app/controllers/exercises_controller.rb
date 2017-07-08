@@ -13,6 +13,8 @@ class ExercisesController < ApplicationController
 
   def create
     @exercise = Exercise.create(exercise_params)
+    @exercise.muscle_group = params[:muscle_group]
+    @exercise.save
 
     if @exercise.save
       redirect_to user_path(current_user), notice: 'Exercise Saved'
@@ -36,6 +38,6 @@ class ExercisesController < ApplicationController
   private
 
   def exercise_params
-    params.require(:exercise).permit(:name, :muscle_group)
+    params.require(:exercise).permit(:name)
   end
 end

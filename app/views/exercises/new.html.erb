@@ -1,0 +1,92 @@
+<div class="row wrapper border-bottom white-bg page-heading" style="margin-top: 50px;">
+  <div class="col-lg-10">
+    <h2>Profile 2</h2>
+    <ol class="breadcrumb">
+      <li>
+        <a href="<%= url_for :controller => 'dashboards', :action => 'dashboard_1' %>">Home</a>
+      </li>
+      <li>
+        <a>App views</a>
+      </li>
+      <li class="active">
+        <strong>Profile 2</strong>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row m-b-lg m-t-lg">
+    <div class="col-md-6">
+
+      <div class="profile-image">
+        <img src="<%= image_path('a4.jpg') %>" class="img-circle circle-border m-b-md" alt="profile">
+      </div>
+
+      <div class="profile-info">
+        <div class="">
+          <div>
+            <h2 class="no-margins">
+              <%= current_user.first_name %> <%= current_user.last_name %>
+            </h2>
+            <h4></h4>
+            <small>
+              When you want to succeed as bad as you want to breathe, then you’ll be successful.
+            </small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+  <div class="row">
+    <div class="col-lg-12">
+
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Add Exercise</h5>
+          <div class="ibox-tools">
+            <a class="collapse-link">
+              <i class="fa fa-chevron-up"></i>
+            </a>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+              <i class="fa fa-wrench"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+              <li><a href="#">Config option 1</a>
+              </li>
+              <li><a href="#">Config option 2</a>
+              </li>
+            </ul>
+            <a class="close-link">
+              <i class="fa fa-times"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="ibox-content">
+          <%= form_for @exercise, :html => {:class => "form-horizontal"} do |f| %>
+            <div class="form-group">
+              <%= f.label :name, class: 'col-lg-12' %>
+              <%= f.text_field :name, class: 'col-lg-12' %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label :muscle_group, class: 'col-lg-12' %>
+              <%= f.select :muscle_group, Exercise.muscle_groups.each { |type| [type, type]}, {prompe: 'Select Muscle Group'}, class: 'col-lg-12 form-control' %>
+            </div>
+
+
+            <div class="form-group">
+              <%= f.submit class:'btn btn-sm btn-white' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
