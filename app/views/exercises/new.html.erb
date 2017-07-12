@@ -15,31 +15,6 @@
   </div>
 </div>
 
-<div class="wrapper wrapper-content animated fadeInRight">
-  <div class="row m-b-lg m-t-lg">
-    <div class="col-md-6">
-
-      <div class="profile-image">
-        <img src="<%= image_path('a4.jpg') %>" class="img-circle circle-border m-b-md" alt="profile">
-      </div>
-
-      <div class="profile-info">
-        <div class="">
-          <div>
-            <h2 class="no-margins">
-              <%= current_user.first_name %> <%= current_user.last_name %>
-            </h2>
-            <h4></h4>
-            <small>
-              When you want to succeed as bad as you want to breathe, then you’ll be successful.
-            </small>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <div class="wrapper wrapper-content animated fadeInRight">
   <div class="row">
@@ -76,7 +51,7 @@
 
             <div class="form-group">
               <%= f.label :muscle_group, class: 'col-lg-12' %>
-              <%= f.select :muscle_group, Exercise.muscle_groups.each { |type| [type, type]}, {prompe: 'Select Muscle Group'}, class: 'col-lg-12 form-control' %>
+              <%= f.select :muscle_group, Exercise.muscle_groups.each { |type| [type, type]}, {prompt: 'Select Muscle Group'}, class: 'col-lg-12 form-control' %>
             </div>
 
 

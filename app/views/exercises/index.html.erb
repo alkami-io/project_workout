@@ -1,11 +1,11 @@
 
 <div class="row wrapper border-bottom white-bg page-heading" style="margin-top: 50px;">
   <div class="col-lg-10">
-    <h2>Routines List</h2>
+    <h2>Exercise List</h2>
     <ol class="breadcrumb">
       <li><%= link_to 'Profile', user_path(current_user.id) %></li>
       <li class="active">
-        <strong>Routines</strong>
+        <strong>Exercises</strong>
       </li>
     </ol>
   </div>
@@ -14,13 +14,9 @@
   </div>
 </div>
 
-
-
 <div class="wrapper wrapper-content animated fadeInRight">
-
   <div class="row m-b-lg m-t-lg">
     <div class="col-md-12">
-      <%= link_to 'Create Routine', new_routine_path, class: 'btn btn-block btn-outline btn-primary' %>
       <%= link_to 'Add Exercise', new_exercise_path, class: 'btn btn-block btn-outline btn-success' %>
     </div>
     <div class="col-md-6"></div>
@@ -29,27 +25,24 @@
 
   <div class="wrapper wrapper-content animated fadeInRight">
     <div class="row">
-      <% current_user.routines.each do |routine| %>
-        <div class="col-md-3">
-          <div class="ibox">
-            <div class="ibox-content product-box">
-
-              <div class="product-imitation">
-                <%= routine.name %>
-              </div>
-              <div class="product-desc">
-                <small class="text-muted"></small>
-                <a href="#" class="product-name"> <%= routine.name %></a>
-
-                <div class="m-t text-right">
-                  <%= link_to "View Routine <i class='fa fa-long-arrow-right'></i>".html_safe, routine_path(routine), class: 'btn btn-xs btn-outline btn-primary' %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      <% end %>
-
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Exercise Name</th>
+            <th>Muscle Group</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @exercises.each do |exercise| %>
+            <tr>
+              <td><%= exercise.id %></td>
+              <td><%= exercise.name %></td>
+              <td><%= exercise.muscle_group.capitalize %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
