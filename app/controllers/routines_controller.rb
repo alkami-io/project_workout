@@ -17,7 +17,7 @@ class RoutinesController < ApplicationController
     @routine.save
 
     if @routine.save
-      redirect_to user_path(current_user), notice: 'Routine Saved'
+      redirect_to routines_path, notice: 'Routine Saved'
     else
       render 'new'
     end
@@ -32,7 +32,7 @@ class RoutinesController < ApplicationController
 
   end
 
-  def delete
+  def destroy
 
   end
 

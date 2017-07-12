@@ -2,14 +2,8 @@
   <div class="col-lg-10">
     <h2>Profile 2</h2>
     <ol class="breadcrumb">
-      <li>
-        <a href="<%= url_for :controller => 'dashboards', :action => 'dashboard_1' %>">Home</a>
-      </li>
-      <li>
-        <a>App views</a>
-      </li>
       <li class="active">
-        <strong>Profile 2</strong>
+        <strong>Profile</strong>
       </li>
     </ol>
   </div>
@@ -41,8 +35,8 @@
       </div>
     </div>
     <div class="col-md-6">
-      <%= link_to 'Create Routine', new_routine_path, class: 'btn btn-block btn-outline btn-primary' %>
-      <button type="button" class="btn btn-block btn-outline btn-success">Add Exercise</button>
+      <%= link_to 'View Routines', routines_path, class: 'btn btn-block btn-outline btn-primary' %>
+      <%= link_to 'View Exercises', exercises_path, class: 'btn btn-block btn-outline btn-success' %>
     </div>
     <div class="col-md-6"></div>
 

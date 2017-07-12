@@ -15,13 +15,14 @@
   </div>
 </div>
 
+
 <div class="wrapper wrapper-content animated fadeInRight">
   <div class="row">
     <div class="col-lg-12">
 
       <div class="ibox float-e-margins">
         <div class="ibox-title">
-          <h5>Add Routine</h5>
+          <h5>Add Exercise</h5>
           <div class="ibox-tools">
             <a class="collapse-link">
               <i class="fa fa-chevron-up"></i>
@@ -42,11 +43,17 @@
         </div>
 
         <div class="ibox-content">
-          <%= form_for @routine, :html => {:class => "form-horizontal"} do |f| %>
+          <%= form_for @exercise, :html => {:class => "form-horizontal"} do |f| %>
             <div class="form-group">
               <%= f.label :name, class: 'col-lg-12' %>
               <%= f.text_field :name, class: 'col-lg-12' %>
             </div>
+
+            <div class="form-group">
+              <%= f.label :muscle_group, class: 'col-lg-12' %>
+              <%= f.select :muscle_group, Exercise.muscle_groups.each { |type| [type, type]}, {prompt: 'Select Muscle Group'}, class: 'col-lg-12 form-control' %>
+            </div>
+
 
             <div class="form-group">
               <%= f.submit class:'btn btn-sm btn-white' %>
