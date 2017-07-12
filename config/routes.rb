@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   #
   ## Routine Routes
   resources :routines
+  put 'add_exercises', to: 'routines#add_exercises', as: :add_exercises
 
   #
   ## Exercise Routes
