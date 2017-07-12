@@ -5,6 +5,7 @@ class RoutinesController < ApplicationController
 
   def show
     @routine = Routine.find_by_id(params[:id])
+    @exercises = Exercise.all
   end
 
   def new
@@ -33,6 +34,27 @@ class RoutinesController < ApplicationController
   end
 
   def destroy
+
+  end
+
+  #
+  ## Custom Actions
+  def add_exercises
+    @routine = Routine.find_by_id(params[:routine])
+    exercises = params[:exercise_ids][:ids]
+    exercises.shift
+
+    exercises.each do |exercise|
+      @routine.exercises << Exercise.find_by_id(exercise)
+    end
+
+    @routine.save
+
+    if @routine.save
+      redirect_to routine_path(@routine), notice: 'Exercises Added!'
+    else
+      render 'show', alert: 'Something went wrong!'
+    end
 
   end
 
