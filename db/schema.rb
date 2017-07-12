@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170708053430) do
+ActiveRecord::Schema.define(version: 20170712031005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 20170708053430) do
     t.decimal "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "exercises_routines", id: false, force: :cascade do |t|
+    t.bigint "routine_id"
+    t.bigint "exercise_id"
+    t.index ["exercise_id"], name: "index_exercises_routines_on_exercise_id"
+    t.index ["routine_id"], name: "index_exercises_routines_on_routine_id"
   end
 
   create_table "routines", force: :cascade do |t|
